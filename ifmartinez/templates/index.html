@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Entrega 1</title>
+
+    <script>
+        function check() {
+            const edKm = document.getElementById("edKm").value;
+            const edTm = document.getElementById("edTm").value;
+            const edCm = document.getElementById("edCm").value;
+            var toret = false;
+
+            if (edKm.trim().length > 0 && edTm.trim().length > 0 && edCm.trim().length > 0 && !isNaN(edKm) && !isNaN(edTm) && !isNaN(edCm) && edTm!=0){
+                toret = true;
+            }
+            return toret;
+        }
+    </script>
+</head>
+<body>
+    <h1>Introduce datos:</h1>
+
+        <form id="frmHello" action="/hello" method="post" onsubmit="return check()">
+            <label for="edKm" >Km: </label>
+            <input type="text" id="edKm" name="edKm" />
+            <br>
+            <label for="edTm">Tiempo(en horas): </label>
+            <input type="text" id="edTm" name="edTm" />
+            <br>
+            <label for="edCm">Consumo medio (por km): </label>
+            <input type="text" id="edCm" name="edCm" />
+
+            <input type="submit" value="Calcular" />
+        </form>
+</body>
+</html>
